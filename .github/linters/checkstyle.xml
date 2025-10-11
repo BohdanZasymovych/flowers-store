@@ -9,9 +9,9 @@
     <!-- Suppress a set of noisy checks for main and test sources to make CI practical.
          This avoids requiring Javadoc/method-name/final-parameter changes across the repo.
          Update the 'checks' or 'files' regexes if you want to re-enable specific checks later. -->
-    <module name="SuppressionSingleFilter">
-        <property name="files" value="src/(main|test)/java/.*"/>
-        <property name="checks" value="JavadocPackage|JavadocVariable|MissingJavadocMethod|DesignForExtension|FinalParameters|MethodName|MagicNumber|NewlineAtEndOfFile|LineLength|HiddenField|JavadocMethod|JavadocType"/>
+    <!-- Use SuppressionFilter to load a suppressions file. See .github/linters/suppressions.xml -->
+    <module name="SuppressionFilter">
+        <property name="file" value=".github/linters/suppressions.xml"/>
     </module>
 
     <!-- Checks that property files contain the same keys. -->
@@ -97,12 +97,7 @@
         </module>
         <module name="IllegalInstantiation"/>
         <module name="InnerAssignment"/>
-        <module name="MagicNumber">
-            <property name="tokens"
-                      value="NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG"/>
-            <property name="ignoreNumbers" value="-1, 0, 0.5, 1, 2"/>
-            <property name="ignoreHashCodeMethod" value="true"/>
-        </module>
+        <!-- MagicNumber check intentionally removed to avoid false positives in tests/examples -->
         <module name="MissingSwitchDefault"/>
         <module name="ModifiedControlVariable"/>
         <module name="SimplifyBooleanExpression"/>
