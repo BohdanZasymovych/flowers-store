@@ -60,7 +60,11 @@ jobs:
           VALIDATE_JAVA: true
           VALIDATE_ALL_CODEBASE: true
           LINTER_RULES_PATH: .github/linters
-          JAVA_CHECKSTYLE_CONFIG: .github/linters/checkstyle.xml
+          JAVA_CHECKSTYLE_CONFIG: checkstyle.xml
+
+      - name: Fetch default branch (main) so Super-Linter can diff
+        run: |
+          git fetch origin main:main || true
 
   test:
     name: Run Maven Tests

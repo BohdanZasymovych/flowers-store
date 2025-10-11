@@ -11,7 +11,8 @@
          Update the 'checks' or 'files' regexes if you want to re-enable specific checks later. -->
     <!-- Use SuppressionFilter to load a suppressions file. See .github/linters/suppressions.xml -->
     <module name="SuppressionFilter">
-        <property name="file" value=".github/linters/suppressions.xml"/>
+        <!-- file path is relative to the LINTER_RULES_PATH used by Super-Linter -->
+        <property name="file" value="suppressions.xml"/>
     </module>
 
     <!-- Checks that property files contain the same keys. -->
