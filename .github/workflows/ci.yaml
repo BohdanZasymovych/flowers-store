@@ -63,7 +63,7 @@ jobs:
           LINTER_RULES_PATH: /github/workspace/.github/linters
           JAVA_CHECKSTYLE_CONFIG: /github/workspace/.github/linters/checkstyle.xml
 
-      - name: Debug: show linter rules
+      - name: "Debug: show linter rules"
         if: always()
         run: |
           echo "-- LINTER_RULES_PATH contents --"
