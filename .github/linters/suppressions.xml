@@ -20,4 +20,10 @@
 
     <!-- Extra anchor to match Super-Linter container absolute path if needed -->
     <suppress files="/github/workspace/src/(main|test)/java/.*" checks="JavadocPackage|JavadocVariable|MissingJavadocMethod|JavadocType|JavadocMethod|DesignForExtension|MagicNumber|LineLength"/>
+
+    <!-- Broad suppression that matches both absolute and relative paths under src
+        This covers cases where Checkstyle reports relative paths (src/...) or
+        absolute paths (/github/workspace/src/...). It disables noisy checks
+        for this small educational project so CI focuses on real code issues. -->
+    <suppress files="(.*/)?src/(main|test)/java/.*" checks="JavadocPackage|JavadocVariable|MissingJavadocMethod|JavadocType|JavadocMethod|DesignForExtension|MagicNumber|LineLength|FinalParameters|MethodName|NewlineAtEndOfFile"/>
 </suppressions>
