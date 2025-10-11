@@ -59,9 +59,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_JAVA: true
           VALIDATE_ALL_CODEBASE: true
-          # Use absolute paths inside the Super-Linter container so the tool can't miss them.
-          LINTER_RULES_PATH: /github/workspace/.github/linters
-          JAVA_CHECKSTYLE_CONFIG: /github/workspace/.github/linters/checkstyle.xml
+          # Use repo-relative rules path (Super-Linter expects a path under the workspace).
+          LINTER_RULES_PATH: .github/linters
+          # Provide the checkstyle config filename located inside LINTER_RULES_PATH.
+          JAVA_CHECKSTYLE_CONFIG: checkstyle.xml
 
       - name: "Debug: show linter rules"
         if: always()
