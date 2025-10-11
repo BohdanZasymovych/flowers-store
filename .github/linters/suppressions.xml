@@ -4,17 +4,17 @@
         "http://checkstyle.sourceforge.net/dtds/suppressions_1_1.dtd">
 <suppressions>
     <!-- Disable Javadoc and documentation-related checks for main and test sources -->
-    <suppress files="src/(main|test)/java/.*" checks="JavadocPackage|JavadocVariable|MissingJavadocMethod|JavadocType|JavadocMethod|DesignForExtension"/>
+    <suppress files=".*/src/(main|test)/java/.*" checks="JavadocPackage|JavadocVariable|MissingJavadocMethod|JavadocType|JavadocMethod|DesignForExtension"/>
 
     <!-- Disable MagicNumber for tests and examples -->
-    <suppress files="src/(main|test)/java/.*" checks="MagicNumber"/>
+    <suppress files=".*/src/(main|test)/java/.*" checks="MagicNumber"/>
 
     <!-- Disable FinalParameters for tests to avoid forcing final on parameters in tests -->
-    <suppress files="src/test/java/.*" checks="FinalParameters"/>
+    <suppress files=".*/src/test/java/.*" checks="FinalParameters"/>
 
     <!-- Disable MethodName for tests (test method naming conventions can differ) -->
-    <suppress files="src/test/java/.*" checks="MethodName"/>
+    <suppress files=".*/src/test/java/.*" checks="MethodName"/>
 
     <!-- Disable LineLength for tests/examples -->
-    <suppress files="src/(main|test)/java/.*" checks="LineLength"/>
+    <suppress files=".*/src/(main|test)/java/.*" checks="LineLength"/>
 </suppressions>
