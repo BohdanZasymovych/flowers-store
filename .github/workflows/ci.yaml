@@ -68,11 +68,11 @@ jobs:
         if: always()
         run: |
           echo "-- LINTER_RULES_PATH contents --"
-          ls -la /github/workspace/.github/linters || true
+          ls -la .github/linters || true
           echo "-- checkstyle.xml (head) --"
-          sed -n '1,200p' /github/workspace/.github/linters/checkstyle.xml || true
+          sed -n '1,200p' .github/linters/checkstyle.xml || true
           echo "-- suppressions.xml (head) --"
-          sed -n '1,200p' /github/workspace/.github/linters/suppressions.xml || true
+          sed -n '1,200p' .github/linters/suppressions.xml || true
 
       - name: Fetch default branch (main) so Super-Linter can diff
         run: |
