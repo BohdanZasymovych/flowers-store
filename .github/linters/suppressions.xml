@@ -17,4 +17,7 @@
 
     <!-- Disable LineLength for tests/examples -->
     <suppress files=".*/src/(main|test)/java/.*" checks="LineLength"/>
+
+    <!-- Extra anchor to match Super-Linter container absolute path if needed -->
+    <suppress files="/github/workspace/src/(main|test)/java/.*" checks="JavadocPackage|JavadocVariable|MissingJavadocMethod|JavadocType|JavadocMethod|DesignForExtension|MagicNumber|LineLength"/>
 </suppressions>

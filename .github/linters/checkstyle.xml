@@ -12,7 +12,8 @@
     <!-- Use SuppressionFilter to load a suppressions file. See .github/linters/suppressions.xml -->
     <module name="SuppressionFilter">
         <!-- file path is relative to the LINTER_RULES_PATH used by Super-Linter -->
-        <property name="file" value="suppressions.xml"/>
+        <!-- Use absolute path inside the Super-Linter container so Checkstyle can find it reliably. -->
+        <property name="file" value="/github/workspace/.github/linters/suppressions.xml"/>
     </module>
 
     <!-- Checks that property files contain the same keys. -->
