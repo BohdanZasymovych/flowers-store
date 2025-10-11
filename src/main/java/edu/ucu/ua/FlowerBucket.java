@@ -9,13 +9,19 @@ public class FlowerBucket {
         flowerPacks = new ArrayList<>();
     }
 
+    FlowerBucket(FlowerBucket flowerBucket) {
+        flowerPacks = new ArrayList<>();
+        for (FlowerPack flowerPack : flowerBucket.flowerPacks) {
+            flowerPacks.add(new FlowerPack(flowerPack));
+        }
+    }
+
     public void add(FlowerPack flowerPack) {
-        FlowerPack newFlowerPack = new FlowerPack(flowerPack);
-        flowerPacks.add(newFlowerPack);
+        flowerPacks.add(new FlowerPack(flowerPack));
     }
 
     public double getPrice() {
-        int totalPrice = 0;
+        double totalPrice = 0;
         for (FlowerPack flowerPack : flowerPacks) {
             totalPrice += flowerPack.getPrice();
         }
