@@ -244,19 +244,19 @@
 
         <!-- Checks for calls to System.exit(). -->
         <module name="RegexpSinglelineJava">
-            <property name="format" value="System\.exit"/>
+            <property name="format" value="System\\.exit"/>
             <property name="ignoreComments" value="true"/>
             <property name="message" value="Not permitted to call System.exit()"/>
         </module>
 
         <!-- Checks for calls to Math.pow(). -->
         <module name="RegexpSinglelineJava">
-            <property name="format" value="Math\.pow\([^,]*, 2\)"/>
+            <property name="format" value="Math\\.pow\\([^,]*, 2\\)"/>
             <property name="ignoreComments" value="true"/>
             <property name="message" value="Use x*x instead of Math.pow(x, 2)"/>
         </module>
         <module name="RegexpSinglelineJava">
-            <property name="format" value="Math\.pow\([^,]*, 3\)"/>
+            <property name="format" value="Math\\.pow\\([^,]*, 3\\)"/>
             <property name="ignoreComments" value="true"/>
             <property name="message" value="Use x*x*x instead of Math.pow(x, 3)"/>
         </module>
