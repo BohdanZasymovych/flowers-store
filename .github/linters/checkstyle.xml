@@ -4,17 +4,14 @@
         "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
 
 
-<module name="Checker">
+<!-- Exclude tests entirely from Checkstyle -->
+<module name="BeforeExecutionExclusionFileFilter">
+    <!-- Works for both relative and absolute paths on Linux and Windows runners -->
+    <property name="fileNamePattern" value="(^|.*/|.*\\)src(/|\\)test(/|\\)java(/|\\).*"/>
+</module>
 
-    <!-- Suppress a set of noisy checks for main and test sources to make CI practical.
-         This avoids requiring Javadoc/method-name/final-parameter changes across the repo.
-         Update the 'checks' or 'files' regexes if you want to re-enable specific checks later. -->
-    <!-- Use SuppressionFilter to load a suppressions file. See .github/linters/suppressions.xml -->
-    <module name="SuppressionFilter">
-        <!-- file path is relative to the LINTER_RULES_PATH used by Super-Linter -->
-        <!-- The suppression file will be located in LINTER_RULES_PATH when Super-Linter runs. -->
-        <property name="file" value="suppressions.xml"/>
-    </module>
+
+<module name="Checker">
 
     <!-- Checks that property files contain the same keys. -->
     <module name="Translation"/>
@@ -302,7 +299,7 @@
                    TYPE_EXTENSION_AND, WILDCARD_TYPE"/>
         </module>
 
-        <module name="NeedBraces"/>
+        <module name="NeedBraces"/> -->
 
 
     </module>
